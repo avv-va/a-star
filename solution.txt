@@ -1,0 +1,32 @@
+Exercise 3)
+
+part_a)
+    path: 0 -> 2 -> 1 -> 6 -> 7 -> 13
+    iterations count:  10
+    distance_traveled:  4  
+
+part_b)
+    path: 0 -> 2 -> 1 -> 6 -> 7 -> 13
+    iterations count:  14
+    distance_traveled:  4
+
+part_d)
+    They both outputs the best path. 
+    However, A_star does this much faster with smaller iterations number,
+    because it considers a non zero heuristic and it's greedy.
+    Dijkstra's heuristic is set to zero, it essentially grows the shortest_path
+    starting the starting point.
+    To search on a large graph between start and goal, I would choose A_star, becuase it will
+    do it greedily and it's much faster.
+    To search on a large graph between start and all other nodes, I would choose Dijkstra, because
+    Dijkstra essentially grows the shortest_path starting goal, so it will also calculate the shortest 
+    path from goal to any node on it's way.
+
+part_e)
+    In file models.py, in Edge part, I would add this line as well:
+    self.node_b.add_neighbour(node_a, self)
+    It basically mean that whenever it adds a edge for node_a and node_b
+    it will add a edge for both node_a -> node_b and node_b -> node_a
+    so it will be two edges in each direction, which could also be interpreted as
+    having no direction. Some minor changes is also needed for the weight function
+    as well to add the same weights for the new edges.
